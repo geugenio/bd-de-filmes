@@ -1,7 +1,6 @@
 import { Routes } from '@angular/router';
-import { Busca } from './features/busca/busca';
-
+import { HomeComponent } from './home.component/home.component';
 export const routes: Routes = [
-    {path: '', component: Busca}
+    {path: '', component: HomeComponent}
     //Componente irá aparecer na raiz do app, localhost:4200.
 ];
