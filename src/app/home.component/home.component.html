@@ -1,5 +1,11 @@
 <main>
     <h1>Bem vindo!</h1>
     <app-busca></app-busca>
-    <div *ngFor="let movie of movies">{{ movie.title }}</div>
+    <h2>Filmes populares</h2>
+    <div class="movie-grid">
+        <div class="movie" *ngFor="let movie of movies">
+            <span class="movie-title">{{ movie.title }}</span>
+            <img class="movie-poster" [src]="'http://image.tmdb.org/t/p/w500/' + movie.poster_path" alt="">
+        </div>
+    </div>
 </main>
