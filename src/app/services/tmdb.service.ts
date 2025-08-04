@@ -34,5 +34,9 @@ export class TmdbService{
         })
     }
 
+    getMoviePerId(id: string){
+        const url = `${this.urlBase}/movie/${id}?api_key=${this.apiKey}&laguage=pt_BR`;
+        return this.http.get<any>(url);
+    }
 
 }
