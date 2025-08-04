@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Search } from '../search/search';
 import { TmdbService } from '../../services/tmdb.service';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
+
+
 @Component({
   selector: 'app-home.component',
   standalone: true,
@@ -12,7 +15,11 @@ import { CommonModule } from '@angular/common';
 export class HomeComponent implements OnInit{
   movies: any[] = [];
   
-  constructor(private tmdb: TmdbService) {}
+  constructor(
+    private tmdb: TmdbService,
+    private router: Router
+  ) {}
+
   ngOnInit(){
     this.tmdb.getPopularMovies().subscribe({
       next: (res: any)=>{
@@ -23,5 +30,9 @@ export class HomeComponent implements OnInit{
         console.log("Erro ao tentar conectar com a API do TMDb: ", err);
       }
     });
+  }
+
+  acessar(movie: any){
+    this.router.navigate(['/filme', movie.id]);
   }
 }
