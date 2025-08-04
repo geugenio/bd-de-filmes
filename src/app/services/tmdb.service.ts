@@ -15,12 +15,14 @@ import { Observable } from "rxjs";
 })
 export class TmdbService{
     private apiKey = environment.tmdbApiKey;
-    private urlBase = 'https://api.temoviedb.org/3';
+    private urlBase = 'https://api.themoviedb.org/3';
     private readonly urlPopularMovies = 'https://api.themoviedb.org/3/movie/popular?language=pt-BR';
 
     constructor(private http: HttpClient){}
-    buscarFilmes(termo: string): Observable<any> {
-        const url = `${this.urlBase}/search/movie?api_key=${this.apiKey}&query=${encodeURIComponent(termo)}&language=pt-BR`;
+
+
+    buscarFilmes(pesquisa: string): Observable<any> {
+        const url = `${this.urlBase}/search/movie?api_key=${this.apiKey}&query=${encodeURIComponent(pesquisa)}&language=pt-BR`;
         return this.http.get(url);
     }
 
@@ -31,4 +33,6 @@ export class TmdbService{
             }
         })
     }
+
+
 }

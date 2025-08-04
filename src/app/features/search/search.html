@@ -1,0 +1,11 @@
+<input [(ngModel)]="termoBusca" placeholder="Buscar filme..." type="text">
+<button (click)="buscar()">Buscar</button>
+
+
+<ul *ngIf="movies.length>0">
+    <li *ngFor="let movie of movies">
+        {{movie.title}}
+    </li>
+</ul>
+
+<p *ngIf = "movies.length ==0 && termoBusca">Nenhum filme foi encontrado.</p>
