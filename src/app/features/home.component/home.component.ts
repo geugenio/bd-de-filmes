@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Search } from '../features/search/search';
-import { TmdbService } from '../services/tmdb.service';
+import { Search } from '../search/search';
+import { TmdbService } from '../../services/tmdb.service';
 import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-home.component',
