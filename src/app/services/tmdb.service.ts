@@ -35,8 +35,12 @@ export class TmdbService{
     }
 
     getMoviePerId(id: string){
-        const url = `${this.urlBase}/movie/${id}?api_key=${this.apiKey}&laguage=pt_BR`;
+        const url = `${this.urlBase}/movie/${id}?api_key=${this.apiKey}&language=pt-BR`;
         return this.http.get<any>(url);
     }
 
+    getCastPerId(id: string){
+        const url = `${this.urlBase}/movie/${id}/credits?api_key=${this.apiKey}&language=pt-BR`;
+        return this.http.get<any>(url);
+    }
 }
