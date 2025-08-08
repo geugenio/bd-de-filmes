@@ -1,0 +1,52 @@
+main{
+
+
+
+    .movie-container{
+        display: block;
+        width: 90%;
+        height: 90%;
+        background-color: rgb(138, 139, 150);
+        margin-top: 8em;
+        margin-left: 5em;
+        margin-right: 5em;
+        
+        .overview{
+            padding:2em;
+            color: white;
+            width: 70%;
+            
+        }
+        .primary-block{
+            
+
+            display: flex;
+
+
+            h2{
+                color: rgba(0, 0, 0, 0.774);
+            }
+
+            
+            .movie-poster{
+               width: 200px;
+               border-radius: 6px;
+               box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+               transform: translate(-0.5rem, -4rem);
+
+               
+            }
+            .data-container{
+                margin-left: 2em;
+                margin-top: 1em;
+                .name-age-container{
+                    display: flex;
+                    align-items: center;
+                    gap: 2em;
+                }
+            }
+
+        }
+
+    }
+}

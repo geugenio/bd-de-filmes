@@ -1,13 +1,30 @@
-<div>
-    <h1> {{movieDados.title}} ({{movieDados.release_date.split('-')[0]}})</h1>
-    <h2>{{ movieDados.original_title }}</h2>
-    <div *ngIf="director">
-    <p>Diretor: {{ director.name }}</p>
-    </div>
-    <img class="movie-poster" [src]="'http://image.tmdb.org/t/p/w500/' + movieDados.poster_path" alt="">
-    <div class="actors" *ngFor="let actor of cincoPrimeirosAtores">
-        <p> {{ actor.name}} ({{actor.character}})</p>
-    </div>
+<main>
+    <div class="movie-container">
+        <div class="primary-block">
+            <img class="movie-poster" [src]="'http://image.tmdb.org/t/p/w500/' + movieDados.poster_path" alt="">
+            <div class="data-container">
+                <h2>{{movieDados.original_title}}</h2>
+                <div class="name-age-container">
+                    <h1>{{movieDados.title}} </h1>
+                    <h2> ({{movieDados.release_date.split('-')[0]}}) </h2>
+                </div>
+                <div *ngIf="director">
+                    <p>Diretor: {{ director.name }}</p>
+                </div>
+            </div>
 
-    <p>{{movieDados.overview}}</p>
+        </div>
+        <p class="overview">{{movieDados.overview}}</p>        
+
+        <div class="actors" *ngFor="let actor of cincoPrimeirosAtores">
+            <div class="individual-actor">
+                <p>{{ actor.name}}</p>
+                <p class="character" style="display: none;">{{actor.character}}</p>
+            </div>
+        </div>
+
+    
 </div>
+</main>
+
+
